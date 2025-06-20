@@ -33,13 +33,9 @@ Enumerate the main results of this project in a list and describe them.
 
 ## Data Sources <!--- do not change this line -->
 
-(UPDATE IN README.md)
-Include any relevant data sources that were used in your project.
-
-*EXAMPLE:*
 *Kaggle Datasets: [Link to Kaggle Dataset]([https://www.kaggle.com/datasets/cynthiamengyuanli/nbi-data-1990-2022])*
-*Others(2023-2024):([https://www.fhwa.dot.gov/bridge/nbi/ascii.cfm])*
 
+https://www.fhwa.dot.gov/bridge/nbi/ascii.cfm
 
 ## Technologies Used <!--- do not change this line -->
 
