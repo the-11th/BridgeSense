@@ -1,5 +1,4 @@
-# BridgeSense A-Structural-Integrity-Forecast-Engine
-TODO:Briefly describe the purpose/result(s) of your project, the skills you applied, and the Apply AI program.
+# BridgeSense | A Structural Integrity Forecast Engine
 
 ## Problem Statement <!--- do not change this line -->
 
