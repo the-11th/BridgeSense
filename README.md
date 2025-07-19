@@ -12,9 +12,9 @@ Enumerate the main results of this project in a list and describe them.
 *EXAMPLE:*
 1. *Examined over 500,000 data points of bridges in Georgia from 1900 to 2022.*
 2. *Identified three biases*
-   - *Inspection Frequency Bias: Depending on how often bridges were inspected due to various factors such as location and economics, results may skew toward bridges that get inspected more often. *
+   - *Inspection Frequency Bias: Depending on how often bridges were inspected due to various factors such as location and economics, results may skew toward bridges that get inspected more often.*
    - *Geographic Bias: There will be some unpredictable factors that alter the result, which decreases the validity of the study.*
-   - *Algorithmic Bias: It may ignore outliers, misjudge whether or not it is a linear relationship,  and may ignore multiple factors that influence the outcome. *
+   - *Algorithmic Bias: It may ignore outliers, misjudge whether or not it is a linear relationship,  and may ignore multiple factors that influence the outcome.*
 
 
 ## Methodologies <!--- do not change this line -->
@@ -28,19 +28,14 @@ Enumerate the main results of this project in a list and describe them.
 
 ## Data Sources <!--- do not change this line -->
 
-*Kaggle Datasets: [Link to Kaggle Dataset]([https://www.fhwa.dot.gov/bridge/nbi/ascii.cfm])*
+*Kaggle Datasets: [https://www.fhwa.dot.gov/bridge/nbi/ascii.cfm]([https://www.fhwa.dot.gov/bridge/nbi/ascii.cfm])*
 
 ## Technologies Used <!--- do not change this line -->
 
-(UPDATE IN README.md)
-List the technologies, libraries, and frameworks used in your project.
-
-*EXAMPLE:*
 - *Python*
 - *pandas*
 - *scikit-learn*
 - *matplotlib*
-
 
 ## Authors <!--- do not change this line -->
 
