@@ -6,25 +6,26 @@
 
 ## Key Results <!--- do not change this line -->
 
-(UPDATE IN README.md)
-Enumerate the main results of this project in a list and describe them.
-
-*EXAMPLE:*
 1. *Examined over 500,000 data points of bridges in Georgia from 1900 to 2022.*
 2. *Identified three biases*
    - *Inspection Frequency Bias: Depending on how often bridges were inspected due to various factors such as location and economics, results may skew toward bridges that get inspected more often.*
    - *Geographic Bias: There will be some unpredictable factors that alter the result, which decreases the validity of the study.*
    - *Algorithmic Bias: It may ignore outliers, misjudge whether or not it is a linear relationship,  and may ignore multiple factors that influence the outcome.*
-
+3. *Evaluated four distinct modeling approaches: Random Forest, XGBoost, CatBoost, and a soft-voting Ensemble of all three.*
+   - *XGBoost was selected as the final champion model. While the Ensemble model achieved a slightly higher F1-score for the "Poor" class, XGBoost was chosen for its significantly superior and unmatched 90% Recall*
+4. *SHAP analysis*
+   - *Bridge Age, Operating Rating, and Inventory Rating were identified as the most significant predictors of structural condition*
+   - ![*SHAP summary*](./results/shap_final_xg.png)
 
 ## Methodologies <!--- do not change this line -->
 
-(UPDATE IN README.md)
+- *Feature Engineering: Automated feature selection with RFECV and created interaction/non-linear features*
 
-*EXAMPLE:*
-*To accomplish this, we utilized the OpenAI API to interact with ChatGPT, and we designed a custom Python script to generate diverse prompts and collect corresponding responses. The data was then processed and analyzed using pandas, enabling us to detect patterns and biases in the AI model's outputs.*
-*Engineered a Python script to generate over 1,000 prompts and elicit their responses from ChatGPT, utilizing pandas to collect the data. When prompted for solutions to this specific relevant crisis, nearly 80% of ChatGPT's responses promoted a certain worldview.*
+- *Class Imbalance: Handled using SMOTE and Class Weighting*
 
+- *Hyperparameter Tuning: Optimized models using Optuna (Bayesian Optimization)*
+
+- *Model Interpretability: Explained model predictions using SHAP*
 
 ## Data Sources <!--- do not change this line -->
 
@@ -32,10 +33,7 @@ Enumerate the main results of this project in a list and describe them.
 
 ## Technologies Used <!--- do not change this line -->
 
-- *Python*
-- *pandas*
-- *scikit-learn*
-- *matplotlib*
+*Python Pandas NumPy Scikit-learn XGBoost CatBoost Imbalanced-learn Optuna SHAP Matplotlib Seaborn VS Code Git Git LFS Joblib*
 
 ## Authors <!--- do not change this line -->
 
