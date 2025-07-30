@@ -316,7 +316,7 @@ print("best_params2: ", study2.best_params)
 print("best_value2: ", study2.best_value)
 
 rfc1 = RandomForestClassifier(**study.best_params, random_state=42, n_jobs=-1, class_weight='balanced')
-xgb1 = XGBClassifier(**study.best_params,objective='multi:softmax',num_class=3,random_state=42,n_jobs=-1)
+xgb1 = XGBClassifier(**study1.best_params,objective='multi:softmax',num_class=3,random_state=42,n_jobs=-1)
 cbc1 = CatBoostClassifier(**study2.best_params, 
     random_state=42, 
     cat_features=[col for col in X_train_cb.columns if col in letters],
@@ -382,18 +382,18 @@ print("Accuracy:", accuracy_score(Y_test, ensemble_pred))
 print("F1 Macro:", f1_score(Y_test, ensemble_pred, average='macro'))
 print(classification_report(Y_test, ensemble_pred, target_names=['Poor', 'Fair', 'Good']))
 
-# final_model = xgc1
+final_model = xgb1
 
-# model_filename = "bridge_risk_model.joblib"
-# joblib.dump(final_model, model_filename)
+model_filename = "bridge_risk_model.joblib"
+joblib.dump(final_model, model_filename)
 
-# explainer = shap.TreeExplainer(final_model)
-# shap_values = explainer.shap_values(X_test)
+explainer = shap.TreeExplainer(final_model)
+shap_values = explainer.shap_values(X_test)
 
-# plt.figure(figsize=(10, 6))
-# shap.summary_plot(shap_values, X_test, plot_type="bar", show=False)
-# plt.title("SHAP Feature Importance - Final Model")
-# plt.tight_layout()
-# plt.savefig("shap_final.png")
+plt.figure(figsize=(10, 6))
+shap.summary_plot(shap_values, X_test, plot_type="bar", show=False)
+plt.title("SHAP Feature Importance - Final Model")
+plt.tight_layout()
+plt.savefig("shap_final.png")
 
 
