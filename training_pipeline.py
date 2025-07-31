@@ -51,6 +51,16 @@ X = df[
         "Computed - Average Daily Truck Traffic (Volume)_missing_flag",
     ]
 ]
+#drop columns of 'CAT10 - Bridge Condition',
+    # 'is_poor_condition',
+    # 'Year',
+    # '27 - Year Built',
+    # '29 - Average Daily Traffic',
+    # '109 - Average Daily Truck Traffic (Percent ADT)',
+    # '96 - Total Project Cost',
+    # '106 - Year Reconstructed',
+    # 'Was_Reconstructed',
+    # '96 - Total Project Cost_missing_flag'
 condition = {'Poor': 0, 'Fair': 1, 'Good': 2}
 Y = (df["CAT10 - Bridge Condition"]).map(condition)
 print("Class distribution:", Counter(Y))
@@ -64,6 +74,11 @@ s_model.fit(X_encoded, Y)
 importances = s_model.feature_importances_
 series = pd.Series(importances, index=X_encoded.columns)
 series1 = series.sort_values(ascending=False)
+# series1.plot(kind='barh')
+# plt.title('Feature Selection')
+# # plt.show()
+# plt.savefig('feature_importance_plot.png')
+# plt.clf()
 cul_importances = series1.cumsum()
 i = (cul_importances <= 0.95).sum() + 1
 index1 = series1.head(i).index
@@ -140,6 +155,14 @@ class_counts = Counter(Y_train)
 catboost_weights = {0: class_counts[2]/class_counts[0],  # Poor
                     1: class_counts[2]/class_counts[1],  # Fair
                     2: 1} #Good
+
+# sns.boxplot(x='CAT10 - Bridge Condition', y='Bridge Age (yr)', data=df)
+# plt.title("Boxplots grouped by bridge condition")
+# plt.ylabel("Bridge Age (yr)")
+# plt.xlabel("Bridge Condition Rating")
+# # plt.show()
+# plt.savefig('age and condition.png')
+# plt.clf()
 
 pruner = optuna.pruners.MedianPruner()
 
