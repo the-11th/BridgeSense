@@ -410,6 +410,9 @@ final_model = xgb1
 model_filename = "bridge_risk_model.joblib"
 joblib.dump(final_model, model_filename)
 
+model_filename = "columns.joblib"
+joblib.dump(X_train_resampled.columns, 'columns.joblib')
+
 explainer = shap.TreeExplainer(final_model)
 shap_values = explainer.shap_values(X_test)
 
