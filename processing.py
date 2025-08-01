@@ -1,13 +1,10 @@
 import pandas as pd
 import joblib
 
-# --- 加载数据转换所需的“资产” ---
-# 这个文件依赖于 'model_columns.joblib'，该文件在训练时生成。
 try:
-    model_columns = joblib.load("model_columns.joblib")
+    model_columns = joblib.load("columns.joblib")
 except FileNotFoundError:
-    # 这是一个后备方案，但在实际运行时，文件必须存在
-    print("There is no file of 'model_columns.joblib'.")
+    print("There is no file of "columns.joblib'.")
     model_columns = []
 
 def transform_data(input):
