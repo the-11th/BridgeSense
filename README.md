@@ -2,14 +2,14 @@
 
 ## Problem Statement <!--- do not change this line -->
 
-*This project's goal is to predict if a bridge will receive a 'Poor' condition rating, using available NBI features like traffic, environmental factors, and material type. Given that a poor rating indicates serious problems that may lead to failure, this prediction provides critical insight that can be used proactively to take active measures and avoid collapse, rather than waiting for the scheduled times where bridges are inspected.*
+*This project's goal is to predict if a bridge in Georgia will receive a 'Poor' condition rating, using available NBI features such as traffic, environmental factors, and construction material. Given that a poor rating indicates serious problems that may lead to failure in the near future, this prediction provides critical insight that can be used proactively to take active measures and avoid collapse, rather than waiting for the scheduled times where bridges are inspected.*
 
 ## Key Results <!--- do not change this line -->
 
 - *Examined over 500,000 data points of bridges in Georgia from 1900 to 2022.*
 - *Identified three biases*
    - *Inspection Frequency Bias: Depending on how often bridges were inspected due to various factors such as location and economics, results may skew toward bridges that get inspected more often.*
-   - *Geographic Bias: There will be some unpredictable factors that alter the result, which decreases the validity of the study.*
+   - *Geographic Bias: There will be some unpredictable factors that alter the result, which decreases the validity of the study, namely the focus of bridges in one location, Georgia. Specific features of Georgia may play a large role in our results.*
    - *Algorithmic Bias: It may ignore outliers, misjudge whether or not it is a linear relationship,  and may ignore multiple factors that influence the outcome.*
 - *Evaluated four distinct modeling approaches: Random Forest, XGBoost, CatBoost, and a soft-voting Ensemble of all three.*
    - *XGBoost was selected as the final champion model. While the Ensemble model achieved a slightly higher F1-score for the "Poor" class, XGBoost was chosen for its significantly superior and unmatched 90% Recall*
@@ -40,7 +40,7 @@
 
 - ML Libraries: *XGBoost, CatBoost, Imbalanced-learn, Optuna, SHAP*
 
-- Deployment & Tools: *Streamlit, Joblib, VS Code, Git, Git LFS*
+- Deployment & Tools: *Colab, Streamlit, Joblib, VS Code, Git, Git LFS*
 
 - Visualization: *Matplotlib, Seaborn*
 
