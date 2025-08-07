@@ -13,7 +13,7 @@ import joblib
 # Import transform_data from the processing module inside the `app` package.
 # This ensures we use the correct preprocessing logic that loads
 # column definitions from app/columns.joblib and avoids ambiguity.
-from app.processing import transform_data  # type: ignore
+from processing import transform_data  # type: ignore
 
 
 @st.cache_resource
@@ -25,8 +25,8 @@ def load_model_and_columns():
     iterable; converting them to a list avoids ambiguity when used in
     boolean expressions or set operations.
     """
-    model = joblib.load("app/bridge_risk_model.joblib")
-    columns_raw = joblib.load("app/columns.joblib")
+    model = joblib.load("bridge_risk_model.joblib")
+    columns_raw = joblib.load("columns.joblib")
     try:
         columns = list(columns_raw)
     except TypeError:
@@ -327,13 +327,13 @@ def show_training_overview():
     # condition.  Older bridges tend to receive poorer ratings, but
     # overlap exists across all classes.
     st.image(
-        "app/age_condition_boxplot.png",
+        "age_condition_boxplot.png",
         caption="Distribution of bridge age grouped by condition rating",
         use_container_width=True,
     )
     # Show SHAP feature importance plot for the final model.
     st.image(
-        "app/shap_feature_importance.png",
+        "shap_feature_importance.png",
         caption="SHAP Feature Importance for the Final Model",
         use_container_width=True,
     )
